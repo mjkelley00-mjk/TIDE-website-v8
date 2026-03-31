@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIDE South Shore | The Incubator for Dining Entrepreneurs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f172a;
+            --gold: #c29d4c;
+            --slate: #64748b;
+            --dark-bg: #0b0f1a;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+       .bg-navy { background-color: var(--navy); }
+       .text-gold { color: var(--gold); }
+        
+       .grid-bg {
+            background-image: radial-gradient(circle, #334155 1.5px, transparent 1.5px);
+            background-size: 40px 40px;
+        }
+
+       .render-frame {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+       .render-label {
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            z-index: 10;
+            border: 1px solid rgba(194, 157, 76, 0.3);
+        }
+
+       .track-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+       .track-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+       .metric-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            text-align: center;
+        }
+
+       .flywheel-container {
+            border: 2px dashed #334155;
+            border-radius: 50%;
+            position: relative;
+            animation: rotate 60s linear infinite;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+       .flywheel-node {
+            animation: counter-rotate 60s linear infinite;
+        }
+        @keyframes counter-rotate { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+       .process-node {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-navy/95 backdrop-blur-sm border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-2xl font-black tracking-tighter text-white uppercase leading-none">TIDE</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-gold font-bold mt-1">South Shore • Chicago</span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-[11px] uppercase tracking-widest font-bold items-center">
+                <a href="#mission" class="text-white hover:text-gold transition">Mission</a>
+                <a href="#ecosystem" class="text-white hover:text-gold transition">Ecosystem</a>
+                <a href="#tracks" class="text-white hover:text-gold transition">The Tracks</a>
+                <a href="#space" class="text-white hover:text-gold transition">Space</a>
+                <a href="#capital" class="text-white hover:text-gold transition">Capital</a>
+                <a href="#apply" class="bg-gold text-navy px-6 py-2.5 rounded-sm hover:bg-white hover:text-navy transition uppercase tracking-widest font-bold">Get Involved</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center grid-bg overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center z-20">
+            <h4 class="text-gold uppercase tracking-[0.5em] font-bold mb-6 text-xs">1910 E. 71st St • South Shore</h4>
+            <h1 class="text-5xl md:text-8xl mb-8 font-bold leading-tight text-white italic">A Rising Tide.</h1>
+            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed text-slate-400">
+                Transforming South Shore culinary talent into permanent, multi-generational wealth. We bridge the gap between shared kitchens and standalone ownership.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#tracks" class="bg-gold text-navy px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-white transition shadow-xl">Explore the Pathways</a>
+                <a href="#apply" class="border border-gold text-gold px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-gold hover:text-white transition">Apply for Residency</a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 right-10 flex flex-col items-end opacity-40">
+            <span class="text-[9px] uppercase font-bold tracking-widest mb-1 text-slate-500">Intended Rendering:</span>
+            <div class="px-3 py-1 bg-slate-800 text-slate-400 font-bold text-[10px] uppercase tracking-widest border border-slate-700">71st St Corridor View</div>
+        </div>
+    </section>
+
+    <section id="mission" class="py-24 bg-navy/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h4 class="text-gold uppercase tracking-widest font-bold mb-4 text-xs">Our Mandate</h4>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">Restorative Economics.</h2>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        <strong class="text-gold italic">TIDE (The Incubator for Dining Entrepreneurs)</strong> is a place-based economic engine. We ensure that the revitalization of our corridor is led by the people who call South Shore home. We don't just host restaurants; we build <span class="text-white italic">anchors</span>.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="h-8 w-8 flex-shrink-0 border border-gold text-gold flex items-center justify-center text-xs font-bold mr-4 mt-1">1</div>
+                            <p class="text-sm text-slate-400"><strong class="text-white">Local-First Priority:</strong> Preference is given to founders with deep South Side roots—residents and legacy families.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="h-8 w-8 flex-shrink-0 border border-gold text-gold flex items-center justify-center text-xs font-bold mr-4 mt-1">2</div>
+                            <p class="text-sm text-slate-400"><strong class="text-white">Validation First:</strong> Our 18-month "Flight Simulator" proves profitability before debt is ever deployed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="render-frame h-[450px]">
+                    <span class="render-label">Rendering: Main Dining Area</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecosystem" class="py-24 bg-dark-bg border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h4 class="text-gold uppercase tracking-widest font-bold mb-4 text-xs">The TIDE Ecosystem</h4>
+                <h2 class="text-4xl font-bold text-white italic">A Scalable Economic Engine</h2>
+            </div>
+
+            <div class="mb-32">
+                <h3 class="text-gold uppercase tracking-widest text-[10px] font-bold mb-10 text-center">The Entrepreneur's Path</h3>
+                <div class="relative grid md:grid-cols-4 gap-8">
+                    <div class="hidden md:block absolute top-6 left-12 right-12 h-[1px] bg-slate-800 z-0"></div>
+                    <div class="process-node text-center">
+                        <div class="w-12 h-12 bg-navy border border-gold rounded-full flex items-center justify-center text-gold font-bold mx-auto mb-6 bg-dark-bg relative z-10">01</div>
+                        <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-wider">Preparation</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed px-4">Early training via partner incubators.</p>
+                    </div>
+                    <div class="process-node text-center">
+                        <div class="w-12 h-12 bg-navy border border-gold rounded-full flex items-center justify-center text-gold font-bold mx-auto mb-6 bg-dark-bg relative z-10">02</div>
+                        <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-wider">Validation</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed px-4">18-month residency in TIDE Incubator.</p>
+                    </div>
+                    <div class="process-node text-center">
+                        <div class="w-12 h-12 bg-navy border border-gold rounded-full flex items-center justify-center text-gold font-bold mx-auto mb-6 bg-dark-bg relative z-10">03</div>
+                        <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-wider">Capitalization</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed px-4">Deployment of BDC & Equity funds.</p>
+                    </div>
+                    <div class="process-node text-center">
+                        <div class="w-12 h-12 bg-gold border border-gold rounded-full flex items-center justify-center text-navy font-bold mx-auto mb-6 relative z-10">04</div>
+                        <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-wider">Anchor Status</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed px-4">Permanent ownership achieved.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="flex justify-center">
+                    <div class="w-72 h-72 md:w-96 md:h-96 flywheel-container flex items-center justify-center">
+                        <div class="absolute text-center px-10">
+                            <div class="text-gold font-black text-3xl leading-none mb-2 uppercase">RECYCLE</div>
+                            <div class="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Evergreen Provision</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">The Financial Flywheel</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Every dollar generated is recycled. Participation fees underwrite operations, while loan repayments from graduates seed the capital for the next South Shore entrepreneur.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-4 bg-navy/20 border border-white/5 text-center">
+                            <div class="text-gold font-bold text-xl mb-1">8-10%</div>
+                            <div class="text-[10px] text-slate-500 uppercase font-bold">Simulated Rent</div>
+                        </div>
+                        <div class="p-4 bg-navy/20 border border-white/5 text-center">
+                            <div class="text-gold font-bold text-xl mb-1">100%</div>
+                            <div class="text-[10px] text-slate-500 uppercase font-bold">Recycled Capital</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tracks" class="py-24 bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-gold uppercase tracking-widest font-bold mb-4 text-xs">Choose Your Path</h4>
+                <h2 class="text-4xl md:text-5xl font-bold text-white">Three Tracks to Wealth</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="track-card">
+                    <div class="text-gold font-bold text-xs uppercase tracking-widest mb-4">Track 1</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">The Incubator</h3>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed">The validation phase. Master your unit economics in our facility before scaling. Audited sales data turns risky founders into bankable operators.</p>
+                </div>
+                <div class="track-card">
+                    <div class="text-gold font-bold text-xs uppercase tracking-widest mb-4">Track 2</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">The Anchor</h3>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed">Local legacy. Path A: Owner-Occupier building acquisition. Path B: Strategic ground-floor anchor in corridor redevelopments.</p>
+                </div>
+                <div class="track-card">
+                    <div class="text-gold font-bold text-xs uppercase tracking-widest mb-4">Track 3</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">The Scale</h3>
+                    <p class="text-sm text-slate-400 mb-8 leading-relaxed">Regional Platform. Scale your concept to 10+ units with TIDE's corporate engine while retaining majority control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="space" class="py-24 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="render-frame h-[500px]">
+                    <span class="render-label">Rendering: Incubator View (Ramen, Burgers, Tacos)</span>
+                </div>
+                <div>
+                    <h4 class="text-gold uppercase tracking-widest font-bold mb-4 text-xs">The Infrastructure</h4>
+                    <h2 class="text-4xl font-bold mb-6">Built for Success.</h2>
+                    <p class="text-slate-400 mb-8">Flagship 5,000 sq ft facility designed for high-density fast-casual validation at 1910 E. 71st St.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 border border-white/10 text-xs uppercase tracking-widest font-bold">3 Independent Kitchens</div>
+                        <div class="p-4 bg-white/5 border border-white/10 text-xs uppercase tracking-widest font-bold">134 Seat Dining Hall</div>
+                        <div class="p-4 bg-white/5 border border-white/10 text-xs uppercase tracking-widest font-bold">Individual Cold Storage</div>
+                        <div class="p-4 bg-white/5 border border-white/10 text-xs uppercase tracking-widest font-bold">Individual Dry Storage</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="capital" class="py-24 bg-dark-bg border-y border-white/5 grid-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="p-12 bg-[#161e2e] border border-white/5">
+                    <h3 class="text-gold font-bold uppercase tracking-widest text-xs mb-6">The Flow (BDC Debt)</h3>
+                    <p class="text-sm text-slate-400 italic mb-8 leading-relaxed">Patient capital for equipment, build-outs, and non-extractive buy-backs along the corridor.</p>
+                    <span class="text-[10px] bg-gold/10 text-gold px-3 py-1 font-bold">STATUS: SEEDING</span>
+                </div>
+                <div class="p-12 bg-[#161e2e] border border-white/5">
+                    <h3 class="text-gold font-bold uppercase tracking-widest text-xs mb-6">The Anchor (Equity Fund)</h3>
+                    <p class="text-sm text-slate-400 italic mb-8 leading-relaxed">Strategic gap financing to secure property titles and prevent community displacement.</p>
+                    <span class="text-[10px] bg-gold/10 text-gold px-3 py-1 font-bold">STATUS: SEEDING</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-navy/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="metric-card">
+                    <div class="text-gold text-4xl font-black mb-2">75%</div>
+                    <div class="text-[9px] uppercase font-bold tracking-widest text-slate-500">Local Ownership</div>
+                </div>
+                <div class="metric-card">
+                    <div class="text-gold text-4xl font-black mb-2">10+</div>
+                    <div class="text-[9px] uppercase font-bold tracking-widest text-slate-500">Storefronts Activated</div>
+                </div>
+                <div class="metric-card">
+                    <div class="text-gold text-4xl font-black mb-2">$10M+</div>
+                    <div class="text-[9px] uppercase font-bold tracking-widest text-slate-500">Neighborhood Wealth</div>
+                </div>
+                <div class="metric-card">
+                    <div class="text-gold text-4xl font-black mb-2">25+</div>
+                    <div class="text-[9px] uppercase font-bold tracking-widest text-slate-500">Living Wage Jobs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="py-24 bg-dark-bg">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Join the Tide.</h2>
+            <form class="space-y-4 text-left">
+                <input type="text" placeholder="Full Name" class="w-full px-5 py-4 bg-white/5 border border-white/10 text-white outline-none focus:border-gold">
+                <input type="email" placeholder="Email Address" class="w-full px-5 py-4 bg-white/5 border border-white/10 text-white outline-none focus:border-gold">
+                <textarea placeholder="Connection to South Shore..." class="w-full px-5 py-4 bg-white/5 border border-white/10 text-white outline-none focus:border-gold h-32"></textarea>
+                <button class="w-full bg-gold text-navy py-5 font-bold uppercase tracking-widest text-xs hover:bg-white transition">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-navy border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-widest font-bold text-slate-500">
+            <div>&copy; 2026 TIDE South Shore. Restorative Redevelopment.</div>
+            <div class="mt-4 md:mt-0 flex space-x-8">
+                <a href="#">The Master Plan</a>
+                <a href="#">Pipeline Partners</a>
+                <a href="#">Legal</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
